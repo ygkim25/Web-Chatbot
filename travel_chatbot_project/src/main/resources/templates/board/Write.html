@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Write</title>
+</head>
+<body>
+	<div class="container" align="center">
+		<div>
+		<h1>Write Page</h1>
+		<p>게시글 등록페이지</p>				
+		</div>
+	</div>
+	
+	<div class="container" align="center">
+		<form th:action="insertBoard" method="post">
+			<input type="hidden" name="writer" class="form-control" th:value="${session.member.id}"/>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title" id="staticBackdropLabel">게시글 등록하기</h1>
+				</div>
+				<!--1.-->
+				<div class="modal-body">
+					<div class="input-group">
+						<div class="input-group-text"><i></i></div>
+						<input type="text" name="title" id="title" class="form-control" required placeholder="board title...."/>
+					</div>
+				<!--2.-->	
+					<div class="input-group">
+						<div class="input-group-text"><i></i></div>
+						<input type="text" name="writer" id="writer" th:value="${session.member.id}" disabled placeholder="board writer...."/>
+					</div>
+				<!--3.-->
+					<div class="input-group mb-3">
+					  <span class="input-group-text"><i></i></span>
+					  <textarea class="form-control"  name="content" rows="5" placeholder="글 상세내용...."></textarea>
+					</div>		
+				<!--4.-->		
+					<div class="input-group mb-3">
+					  <label class="input-group-text" for="uploadFile"><i></i></label>
+					  <input type="file" class="form-control" name="uploadFile" id="uploadFile" aria-describedby="uploadFile" aria-label="Upload">
+					</div>					
+				</div> 
+				
+				<div class="modal-footer">
+					<input type="submit" class="btn" value="새 글 등록"/>
+					<a th:href="@{/getBoardList}" class="btn">글 목록</a>
+				</div>
+			</div>			
+		</form>
+	</div>
+	
+</body>
+</html>

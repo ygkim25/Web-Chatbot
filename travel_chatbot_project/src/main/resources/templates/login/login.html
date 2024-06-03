@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Login/Signup Page</title>
+</head>
+<body>
+	<div class="container" align="center">
+		<div>
+			<h3>Spring Boot(LOGIN)</h3>
+		</div>
+		<br>
+		
+		<form th:action="@{/login}" method="post">
+			<div>
+				<input type="text" name="id"/>
+				<input type="password" name="password" />
+				<input type="submit" value="login"/>
+			</div>
+		</form>
+		
+		<div>
+			<input type="text" name="signup" value="signup"/>
+		</div>
+	</div>
+</body>
+</html>
