@@ -1,0 +1,105 @@
+@charset "EUC-KR";
+/* 기본 스타일 */
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.center button{
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: blue;
+    color: aliceblue;
+    font-weight: 600;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.center button:hover{
+    background:black;
+    transition:0.4s ease-in-out;
+}
+.popup{
+    position: absolute;
+    background: #fff;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(0.125);
+    width: 380px;
+    /* height: 220px; */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.05);
+    transition: top 0ms ease-in-out 200ms,
+            opacity  200ms ease-in-out 0ms,
+            transform 200ms ease-in-out 0ms;
+}
+.popup.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+
+}
+.popup .close-btn {
+    position: absolute;
+    top: 17px;
+    right: 30px;
+    background: gray;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.popup .form h2{
+    text-align: center;
+    margin: 10px;
+    color: black;
+}
+.popup .form .form-element{
+    margin: 10px 0;
+}
+.popup .form .form-element label{
+    font-weight: 600;
+    font-size: 14px;
+}
+.popup .form .form-element input[type='text'],
+.popup .form .form-element input[type='password']{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    outline: none;
+}
+.popup .form .form-element input[type='checkbox']{
+    margin: 10px 0;
+}
+.popup .form .form-element button{
+    width: 100%;
+    padding: 10px;
+    font-weight: 900;
+    background: lightblue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.popup .form .form-element a{
+    text-decoration: none;
+    color: blue;
+    display: block;
+    text-align: right;
+}
+.popup .form .form-element a:hover{
+    color:red;
+}

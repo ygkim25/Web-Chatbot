@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 여행일지</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ip45oqmru1"></script>
+    <style>
+    	body {
+		    font-family: Arial, sans-serif;
+		    margin: 0;
+		    padding: 0;
+		    background-color: #f4f4f9;
+		}
+		
+		header {
+		    background-color: #4CAF50;
+		    color: white;
+		    text-align: center;
+		    padding: 1rem 0;
+		}
+		
+		.banner {
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    padding: 0 1rem;
+		    flex-wrap: wrap; /* Allow items to wrap if needed */
+		    position: relative; /* 부모 요소를 상대 위치로 설정 */
+		}
+		
+		.logo {
+		    height: 50px;
+		    margin-right: 1rem;
+		    margin-left: 20em; /* 중앙에서 왼쪽으로 30em 고정 */
+		    position: absolute; /* 자식 요소를 절대 위치로 설정 */
+		    left: 0; /* 왼쪽에 고정 */
+		}
+		
+		.userlogo {
+		    margin-right: 20em; 
+		    position: absolute; 
+		    right: 0;
+		}
+		
+		.banner h1 {
+		    margin: 0 auto; /* 가운데 정렬 */
+		}
+		
+		main {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    padding: 2rem;
+		    width: 100%;
+		    box-sizing: border-box;
+		}
+		
+		#content {
+		    display: flex;
+		    justify-content: center;
+		    width: 100%;
+		    max-width: 1200px;
+		    box-sizing: border-box;
+		}
+		
+		#journal-entries, #map {
+		    flex: 1;
+		    padding: 1rem;
+		    box-sizing: border-box;
+		}
+		
+		#journal-entries {
+		    margin-right: 1rem;
+		    background-color: white;
+		    border: 1px solid #000; /* Black border */
+		    border-radius: 10px; /* Rounded corners */
+		}
+		
+		.journal-entry {
+		    background-color: white;
+		    border: 1px solid #ddd;
+		    border-radius: 5px;
+		    padding: 1rem;
+		    margin-bottom: 1rem;
+		}
+		
+		.journal-entry h3 {
+		    margin-top: 0;
+		}
+		
+		#map {
+		    background-color: white;
+		    border: 1px solid #ddd;
+		    border-radius: 5px;
+		    height: 500px;
+		}
+		
+		#new-entry {
+		    width: 100%;
+		    max-width: 1200px;
+		    background-color: white;
+		    border: 1px solid #ddd;
+		    border-radius: 5px;
+		    padding: 1rem;
+		    margin-top: 2rem;
+		}
+		
+		form {
+		    display: flex;
+		    flex-direction: column;
+		}
+		
+		label {
+		    margin-top: 0.5rem;
+		}
+		
+		input, textarea, button {
+		    margin-top: 0.5rem;
+		    padding: 0.5rem;
+		    border: 1px solid #ddd;
+		    border-radius: 5px;
+		}
+		
+		button {
+		    background-color: #4CAF50;
+		    color: white;
+		    border: none;
+		    cursor: pointer;
+		    margin-top: 1rem;
+		}
+		
+		button:hover {
+		    background-color: #45a049;
+		}
+		    	
+    </style>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo" width="200" height="45"><br /></a>
+            <h1>나만의 여행일지</h1>
+            <a href="" class="userlogo" style="text-decoration: none">누구누구 님</a>
+        </div>
+    </header>
+    <main>
+        <section id="content">
+            <div id="journal-entries">
+                <!-- Journal entries will be dynamically added here -->
+            </div>
+            <div id="map"></div>
+        </section>
+        <section id="new-entry">
+            <h2>Add New Entry</h2>
+            <form id="entry-form">
+                <label for="entry-date">Date:</label>
+                <input type="date" id="entry-date" required>
+                <label for="entry-title">Title:</label>
+                <input type="text" id="entry-title" required>
+                <label for="entry-content">Content:</label>
+                <textarea id="entry-content" required></textarea>
+                <button type="submit">Add Entry</button>
+            </form>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
