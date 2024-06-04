@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<div class="container" align="center">
+		<h3>사용자 정보</h3>
+		<h5><font th:text="|${session['member'].name}(${session.member.id})|"></font>님 환영합니다!</h5>	
+	</div>
+	
+	<div class="container" align="center">
+		<form>
+			<div class="col-2 input-group mb-3">
+				<div class="input-group-text"><i class="fas fa-user"></i></div>
+				<input type="text" name="id" class="form-control" th:value="${ member.getId() }" disabled>
+			</div>
+			<div class="col-2 input-group mb-3">
+				<div class="input-group-text"><i class="fas fa-address-book"></i></div>
+				<input type="text" name="name" class="form-control" th:value="${ member.getName() }" disabled>
+			</div>
+			<div class="col-2 mb-3 form-check  form-switch start-0">
+			    <input class="form-check-input" type="checkbox" name="role" th:checked="${ member.getRole().toUpperCase() == 'ADMIN'}" disabled>
+			    <label class="form-check-label" for="role">Administrator</label>
+			</div>
+		</form>
+	</div>
+	<div class="container" align="center">	
+		<a th:href="logout" class="btn btn-primary mt-3">logout</a>
+		<th:block th:if="${member.getRole().toUpperCase() == 'ADMIN' }" >
+	    	<a th:href="getMemberList" class="btn btn-primary mt-3">사용자목록보기</a>
+	    </th:block>
+		<!--<a th:href="getBoardList" class="btn btn-primary mt-3">커뮤니티</a>-->
+		<a th:href="community" class="btn btn-primary mt-3">커뮤니티</a>
+	</div>		
+	<!--updatemember 확인용-->
+	<form th:action="updateMember" method="get">		
+		<input type="submit" value="update"/>
+	</form>	
+</body>
+</html>

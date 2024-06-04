@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>test</title>
+	<meta name="viewport" content="width-device-width, initial-scale=1, user-scalable=no" />
+	<!--link -->
+	<link rel="stylesheet" href="./assets/css/test_main.css" />
+	<!-- noscript-->
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>-->
+</head>
+
+<!--body class="index is-preload">-->
+<div id="page-wrapper">
+	<!--Header-->
+	<header id="header" class="alt">
+		<h1 id="logo"><a href="index.html">Community <span>by HTML5 UP</span></a></h1>
+		<nav id="nav">
+			<ul>
+				<li class="current"><a href="index.html">Home</a></li>
+				<li th:if="${member == null}"><a href="login" class="button primary">Login</a></li>
+				<span th:if="${member != null}">
+				<li th:if="${member.getId() != null}"><a href="getMemberInfo">My Page</a></li>						
+				<li ><a th:href="logoutOfCommunity">Log Out</a></li>
+				</span>
+				<!--
+				<li class="submenu">
+					<a href="#">Layouts</a>
+					<ul>
+						<li><a href="getMemberInfo.html">Left - My Page</a></li>
+						<li><a href="right-sidebar.html">Right - Search</a></li>
+						<li><a href="no-sidebar.html">No Sidebar</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li class="submenu">
+							<a href="#">Submenu</a>
+							<ul>
+								<li><a href="#">Submenu 1</a></li>
+								<li><a href="#">Submenu 2</a></li>
+								<li><a href="#">Submenu 3</a></li>
+								<li><a href="#">Submenu 4</a></li>
+								<li><a href="#">Submenu 5</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				-->
+			</ul>
+		</nav>
+	</header>
+	<!--Banner-->
+	<section id="banner">
+		<div class="inner">
+			<header>
+				<h2>여기요와 함께 떠나요</h2>
+			</header>
+			<p>
+				780만 여행자의 이야기가 담겨있는
+				<br>
+				<strong><a href="#"></a>아름다운 국내 여행지</strong>를
+				<br>
+				소개해요
+				<br>
+			</p>
+			<footer>
+				<ul class="button stacked">
+					<li>
+						<a href="right-sidebar.html" class="button fit scrolly">알아보기</a>
+					</li>
+				</ul>
+			</footer>
+		</div>
+	</section>
+	<!--Main-->
+	<!--Article Start-->
+	<article id="main">
+		<header class="special container">
+			<h2>
+				<strong>최근 가장 HOT한 여행지 Top 10</strong>
+				<br>
+			</h2>
+			지난 일주일 간 평소보다 더 많이 저장된 관광지・맛집
+
+		</header>
+
+		<!--One-->
+		<section class="wrapper style2 container special-alt">
+			<div class="row gtr-50"><!--Flex-->
+				<div class="col-8 col-12-narrower">
+					<!-- Wrapper1 -->
+					<section id="wrapper1">
+						<header>
+						<!--
+							<div class="inner">
+								<h2>추천 관광지</h2>
+								<p>먼저 다녀온 여행자들이 만든 추천 코스를 내 일정으로 담아보세요!</p>
+							</div>
+						-->
+						</header>
+						<!-- Content -->
+						<div class="wrapper2">
+							<div class="inner">
+								<section class="features1">
+									<article>
+										<a href="#" class="image"><img src="images/visit4.jpg" alt="" /></a>
+										<h3 class="major">북촌 한옥마을</h3>
+										<p>Lorem ipsum dolor sit amet.</p>
+										<!--<a href="#" class="special">Learn more</a>-->
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/visit7.jpg" alt="" /></a>
+										<h3 class="major">경주 단풍길</h3>
+										<p>Lorem ipsum dolor sit amet.</p>
+										<!--<a href="#" class="special">Learn more</a>-->
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/visit6.jpg" alt="" /></a>
+										<h3 class="major">부산항</h3>
+										<p>Lorem ipsum dolor sit amet</p>
+										<!--<a href="#" class="special">Learn more</a>-->
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/visit3.jpg" alt="" /></a>
+										<h3 class="major">경복궁</h3>
+										<p>Lorem ipsum dolor sit amet</p>
+										<!--<a href="#" class="special">Learn more</a>-->
+									</article>
+								</section>
+							</div>
+						</div>
+						<!-- Content -->
+						<div class="wrapper2">
+							<div class="inner">
+								<section class="features1">
+									<article>
+										<a href="#" class="image"><img src="images/visit4.jpg" alt="" /></a>
+										<h3 class="major">북촌 한옥마을</h3>
+										<p>Lorem ipsum dolor sit amet.</p>
+										<!--<a href="#" class="special">Learn more</a>-->
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/visit7.jpg" alt="" /></a>
+										<h3 class="major">경주 단풍길</h3>
+										<p>Lorem ipsum dolor sit amet.</p>
+										<!--<a href="#" class="special">Learn more</a>-->
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/visit6.jpg" alt="" /></a>
+										<h3 class="major">부산항</h3>
+										<p>Lorem ipsum dolor sit amet</p>
+										<!--<a href="#" class="special">Learn more</a>-->
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/visit3.jpg" alt="" /></a>
+										<h3 class="major">경복궁</h3>
+										<p>Lorem ipsum dolor sit amet</p>
+										<!--<a href="#" class="special">Learn more</a>-->
+									</article>
+								</section>
+							</div>
+						</div>
+					</section>
+				</div>
+
+			</div>
+		</section>
+
+		<!--Two-->
+
+		<section class="wrapper style1 container special">
+			<div class="row">
+				<div class="items">
+
+				</div>
+				<div class="items">
+					<div class="item name">B</div>
+					
+				</div>
+				<div class="items">
+					<div class="item name">C</div>
+					
+				</div>
+				<div class="items">
+					<div class="item name">D</div>
+					
+				</div>
+				<div class="items">
+					<div class="item name">E</div>
+					
+				</div>
+				<div class="items">
+					<div class="item name">F</div>
+					
+				</div>
+			</div>
+		</section>
+
+		<!--Three-->
+		<section class="wrapper style3 container special">
+			<header class="major">
+				<h2>
+					"Next look at this"
+					<strong>cool stuff</strong>
+				</h2>
+			</header>
+			<div class="row"><!--Flex--> <!--1st row-->
+				<div class="col-6 col-12-narrower">
+					<section>
+						<a href="#" class="image featured"><!--::before --><img src="images/visit8.jpg"
+								alt="placeholder" /></a>
+						<header>
+							<h3>A Really Fast Train</h3>
+						</header>
+						<p>
+							"Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu."
+						</p>
+					</section>
+				</div>
+				<div class="col-6 col-12-narrower">
+					<section>
+						<a href="#" class="image featured"><!--::before --><img src="images/visit9.jpg"
+								alt="placeholder" /></a>
+						<header>
+							<h3>Airport Terminal</h3>
+						</header>
+						<p>
+							"Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu."
+						</p>
+					</section>
+				</div>
+			</div>
+			<div class="row"><!--Flex--> <!--2nd row-->
+				<div class="col-6 col-12-narrower">
+					<section>
+						<a href="#" class="image featured"><!--::before --><img src="images/visit3.jpg"
+								alt="placeholder" /></a>
+						<header>
+							<h3>Hyperspace Travel</h3>
+						</header>
+						<p>
+							"Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu."
+						</p>
+					</section>
+				</div>
+				<div class="col-6 col-12-narrower">
+					<section>
+						<a href="#" class="image featured"><!--::before--><img src="images/visit4.jpg"
+								alt="placeholder" />
+						</a>
+						<header>
+							<h3>Another Train</h3>
+						</header>
+						<p>
+							"Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu."
+						</p>
+					</section>
+				</div>
+			</div>
+			<footer class="major">
+				<ul class="buttons">
+					<li><a href="#" class="button">See More</a></li>
+				</ul>
+			</footer>
+		</section>
+	</article>
+	<!--Article End-->
+
+	<!--CTA-->
+	<section id="cta">
+		<header>
+			<h2>
+				"Ready to do "
+				<strong>something</strong>
+				"?"
+			</h2>
+			<p>"Proin a ullamcorper elit, et sagittis turpis integer ut fermentum."</p>
+		</header>
+		<footer>
+			<ul class="buttons">
+				<li><a href="#" class="button primary">Take My Money</a></li>
+				<li><a href="#" class="button">Lol wut</a></li>
+			</ul>
+		</footer>
+	</section>
+	<!--Footer-->
+	<footer id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
+			<li><a href="#" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
+			<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+		</ul>
+		<ul class="copyright">
+			<li>@ Untitled</li>
+			<li>
+				"Design"
+				<a href="http://html5up.net">HTML5 UP</a>
+			</li>
+		</ul>
+	</footer>
+</div>
+<!--Scripts-->
+<!--jquery.min.js가 먼저 와야 jquery인식 가능-->
+<script src="assets/js/jquery.min.js"></script>
+<!-- 아래 js가 index.html의 layout드롭메뉴 구현 (util.js제외) -->
+<!--주의*** 아래 순서가 아니면 에러남. -->
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--아래 js 없으면 index.html에 banner 글이 안보임.-->
+<script src="assets/js/main.js"></script>
+
+
+
+</body>
+
+</html>
